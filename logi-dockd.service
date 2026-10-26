@@ -1,0 +1,12 @@
+[Unit]
+Description=Logi Dock buttons and LEDs
+After=pipewire-pulse.service wireplumber.service
+Wants=pipewire-pulse.service
+
+[Service]
+ExecStart=%h/.local/bin/logi-dockd --teams-cmd 'notify-send "Logi Dock" "Teams button pressed"'
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

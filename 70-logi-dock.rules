@@ -1,0 +1,4 @@
+# Logi Dock (046d:0acc): give the logged-in user access to the dock's HID
+# interface (buttons + LEDs) and its input event nodes. Nothing else.
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0acc", TAG+="uaccess"
+SUBSYSTEM=="input", KERNEL=="event*", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="0acc", TAG+="uaccess"
